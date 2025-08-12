@@ -1,7 +1,8 @@
 import tkinter as tk
 from camera import Camera
 from ui import UI
-
+#Connected to github
+print("Hello world")
 def main():
     root = tk.Tk()
     root.title("People Detection")
