@@ -3,6 +3,7 @@ from camera import Camera
 from ui import UI
 #Connected to github
 print("Hello world")
+print("-1")
 def main():
     root = tk.Tk()
     root.title("People Detection")
@@ -18,7 +19,7 @@ def main():
 
     # Create UI and pass camera instance
     ui = UI(root, camera)
-
+    print("Created ui")
     # Now that UI is created, inject actual label and variables into camera
     camera.label_image = ui.label_image
     camera.var_filter = ui.var_filter
