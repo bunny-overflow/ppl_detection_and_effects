@@ -3,19 +3,27 @@ from camera import Camera
 from ui import UI
 #Connected to github
 print("Hello world")
-print("-1");
+print("-1")
 def main():
     root = tk.Tk()
     root.title("People Detection")
-    root.geofigure(bg="#1e272e")
+    root.geometry("1000x700")
+    root.state('zoomed')
+    root.configure(bg="#1e272e")
 
     # Initialize dummy label for now; will be replaced by UI
-    dummy_la
+    dummy_label = tk.Label(root)
+
+    # Create Camera instance without UI elements yet
+    camera = Camera(dummy_label, None, None, None)
+
     # Create UI and pass camera instance
     ui = UI(root, camera)
-
+    print("Created ui")
     # Now that UI is created, inject actual label and variables into camera
-    camera.ltrength = ui.strength
+    camera.label_image = ui.label_image
+    camera.var_filter = ui.var_filter
+    camera.strength = ui.strength
     camera.isdone = ui.isdone
 
     root.mainloop()
